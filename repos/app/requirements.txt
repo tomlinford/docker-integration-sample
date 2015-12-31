@@ -1,0 +1,5 @@
+Django==1.9
+djangorestframework==3.3.2
+hvac==0.2.7
+requests==2.9.1
+six==1.10.0

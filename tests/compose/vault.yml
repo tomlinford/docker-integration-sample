@@ -1,0 +1,19 @@
+app:
+    command: /bin/bash /mnt/run.sh
+    image: integration-app
+    volumes:
+        - ../../repos/app/:/app
+        - ../../docker/app:/mnt
+    ports:
+        - "8000:8000"
+    links:
+        - vault
+
+vault:
+    entrypoint: /bin/bash
+    command: /vault/run.sh
+    image: cgswong/vault:0.3.1
+    expose:
+        - 8201
+    volumes:
+        - ../../docker/vault/:/vault/
